@@ -1,0 +1,12 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "isCreatingSolution": false,
+    "environment": "spo",
+    "version": "1.9.1",
+    "libraryName": "datafetch",
+    "libraryId": "5096ae9c-c676-43dc-9f1b-3f39b4672c72",
+    "packageManager": "npm",
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "classic-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/classic/ClassicWebPart.js",
+          "manifest": "./src/webparts/classic/ClassicWebPart.manifest.json"
+        }
+      ]
+    },
+    "hook-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/hook/HookWebPart.js",
+          "manifest": "./src/webparts/hook/HookWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ClassicWebPartStrings": "lib/webparts/classic/loc/{locale}.js",
+    "HookWebPartStrings": "lib/webparts/hook/loc/{locale}.js"
+  }
+}
