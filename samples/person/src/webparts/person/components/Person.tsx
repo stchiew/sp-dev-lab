@@ -17,11 +17,13 @@ export default class Person extends React.Component<IPersonProps, {}> {
     );
   }
 
+  // Note: for person/group fields, append Id to the column name
   private async _saveUser(): Promise<void> {
     let currentUser = await sp.web.currentUser.get();
     console.log('Id' + currentUser.Id);
     const i = await sp.web.lists.getByTitle('Registration').items.add({
-      Title: currentUser.LoginName
+      Title: currentUser.LoginName,
+      AttendeeId: currentUser.Id
     });
   }
 }
