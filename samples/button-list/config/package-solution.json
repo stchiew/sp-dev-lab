@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "button-list-client-side-solution",
+    "id": "4f7a871d-e8b8-4dc5-a713-fd3aa8e1f3d7",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/button-list.sppkg"
+  }
+}
