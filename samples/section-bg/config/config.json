@@ -9,10 +9,19 @@
           "manifest": "./src/webparts/officeUiComponents/OfficeUiComponentsWebPart.manifest.json"
         }
       ]
+    },
+    "section-background-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/sectionBackground/SectionBackgroundWebPart.js",
+          "manifest": "./src/webparts/sectionBackground/SectionBackgroundWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "OfficeUiComponentsWebPartStrings": "lib/webparts/officeUiComponents/loc/{locale}.js"
+    "OfficeUiComponentsWebPartStrings": "lib/webparts/officeUiComponents/loc/{locale}.js",
+    "SectionBackgroundWebPartStrings": "lib/webparts/sectionBackground/loc/{locale}.js"
   }
 }
