@@ -3,28 +3,25 @@ import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
 import {
   IPropertyPaneConfiguration,
-  PropertyPaneTextField,
-  PropertyPaneToggle
+  PropertyPaneTextField
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 
-import * as strings from 'ButtonsWebPartStrings';
-import Buttons from './components/Buttons';
-import { IButtonsProps } from './components/IButtonsProps';
+import * as strings from 'HelloWorldWebPartStrings';
+import HelloWorld from './components/HelloWorld';
+import { IHelloWorldProps } from './components/IHelloWorldProps';
 
-export interface IButtonsWebPartProps {
+export interface IHelloWorldWebPartProps {
   description: string;
-  darkLightMode: boolean;
 }
 
-export default class ButtonsWebPart extends BaseClientSideWebPart<IButtonsWebPartProps> {
+export default class HelloWorldWebPart extends BaseClientSideWebPart <IHelloWorldWebPartProps> {
 
   public render(): void {
-    const element: React.ReactElement<IButtonsProps> = React.createElement(
-      Buttons,
+    const element: React.ReactElement<IHelloWorldProps> = React.createElement(
+      HelloWorld,
       {
-        description: this.properties.description,
-        darkLightMode: this.properties.darkLightMode
+        description: this.properties.description
       }
     );
 
@@ -52,9 +49,6 @@ export default class ButtonsWebPart extends BaseClientSideWebPart<IButtonsWebPar
               groupFields: [
                 PropertyPaneTextField('description', {
                   label: strings.DescriptionFieldLabel
-                }),
-                PropertyPaneToggle('darkLightMode', {
-                  label: 'Dark mode?'
                 })
               ]
             }

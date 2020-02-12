@@ -1,8 +1,7 @@
 import * as React from 'react';
 import styles from './Buttons.module.scss';
-import { IReadonlyTheme } from '@microsoft/sp-component-base';
 import { IButtonsProps } from './IButtonsProps';
-import { CompoundButton, Stack, IStackTokens, IIconProps, IButtonStyles, IIconStyles, IStackStyles, PrimaryButton, Customizer } from 'office-ui-fabric-react';
+import { CompoundButton, Stack, IStackTokens, IIconProps, IButtonStyles, IIconStyles, IStackStyles, PrimaryButton, Customizer, DefaultButton } from 'office-ui-fabric-react';
 //import { Customizer } from '@uifabric/utilities';
 import { FontSizes, DefaultPalette } from 'office-ui-fabric-react/lib/Styling';
 const buttonData = [
@@ -26,43 +25,36 @@ const primaryCalendar: IIconProps = {
 export default class Buttons extends React.Component<IButtonsProps, {}> {
   public render(): React.ReactElement<IButtonsProps> {
     const buttonStyles: IButtonStyles = {
-      root: { width: 286, minHeight: 90 }
+      root: { width: 286, minHeight: 90 },
+      label: { fontSize: 15, fontWeight: 400 },
+      secondaryText: { fontSize: FontSizes.medium }
     };
     const stackStyles: IStackStyles = {
       root: {
         width: `100%`
       }
     };
-    const { semanticColors }: IReadonlyTheme = this.props.themeVariant;
+
     return (
       <div className={styles.buttons}>
-        <div className={styles.container} style={{ backgroundColor: semanticColors.bodyBackground }}>
-          <div><h3>Buttons</h3></div>
+        <DefaultButton text="Standard" />
+        <div className={styles.container}>
 
           <Stack horizontal wrap tokens={stackTokens} styles={stackStyles}>
-
             {
               buttonData.map((btn) =>
                 <div className={styles.button} >
-                  <Customizer settings={{ themeVariant: semanticColors }}>
-                    <PrimaryButton>Click Me</PrimaryButton>
-                  </Customizer>
-
+                  <CompoundButton
+                    secondaryText={btn.Description}
+                    iconProps={primaryCalendar}
+                    styles={buttonStyles}>{btn.Title}</CompoundButton>
                 </div>
               )
-
             }
           </Stack>
-
         </div>
       </div>
     );
   }
 
-  /**                    <CompoundButton
-                      primary
-                      secondaryText={btn.Description}
-                      iconProps={primaryCalendar}
-                      styles={buttonStyles}
-                    >{btn.Title}</CompoundButton> */
 }

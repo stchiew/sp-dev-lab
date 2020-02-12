@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "butt-lab-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/buttLab/ButtLabWebPart.js",
+          "manifest": "./src/webparts/buttLab/ButtLabWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ButtLabWebPartStrings": "lib/webparts/buttLab/loc/{locale}.js"
+  }
+}
